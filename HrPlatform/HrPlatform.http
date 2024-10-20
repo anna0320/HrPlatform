@@ -1,0 +1,43 @@
+@HrPlatform_HostAddress = http://localhost:5000
+# Получение всех вакансий
+GET http://localhost:5000/api/vacancy
+Accept: application/json
+
+###
+
+# Создание новой вакансии
+POST http://localhost:5000/api/vacancy/create
+Content-Type: application/json
+
+{
+  "title": "Аналитик данных",
+  "hrSpecialist": {
+    "name": "Иван Иванов"
+  },
+  "department": {
+    "name": "Аналитический отдел"
+  },
+  "candidates": [
+    {
+      "name": "Николай Николаев",
+      "status": "Ожидание"
+    }
+  ]
+}
+
+###
+
+# Удаление вакансии по ID
+DELETE http://localhost:5000/api/vacancy/1
+
+###
+
+# Получение всех HR специалистов
+GET http://localhost:5000/api/hrspecialists
+Accept: application/json
+
+###
+
+# Получение всех кандидатов
+GET http://localhost:5000/api/candidates
+Accept: application/json
